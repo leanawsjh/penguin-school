@@ -1,0 +1,118 @@
+{
+  "context": {
+    "readProjectFiles": true,
+    "respectGeminiMd": true,
+    "scope": "repository"
+  },
+
+  "interaction": {
+    "defaultMode": "plan-first",
+    "requireApprovalBeforeCode": true,
+    "verbosity": "medium",
+    "explanationStyle": "teaching",
+    "assumeSkillLevel": "beginner-to-intermediate-mlops"
+  },
+
+  "codeGeneration": {
+    "autoImplement": false,
+    "preferSmallChanges": true,
+    "explainBeforeWritingCode": true,
+    "addDocstrings": true,
+    "addInlineComments": "when-non-obvious",
+    "avoidOverEngineering": true
+  },
+
+  "testing": {
+    "tddEnabled": true,
+    "tddStrategy": "selective",
+    "requireTestPlanFirst": true,
+    "avoidTddFor": [
+      "exploratory-data-analysis",
+      "model-training-optimization",
+      "early-research-prototypes"
+    ],
+    "preferTestsFor": [
+      "data-contracts",
+      "feature-engineering",
+      "pipeline-logic",
+      "model-governance",
+      "monitoring-rules"
+    ]
+  },
+
+  "mlops": {
+    "primaryLanguage": "python",
+    "experimentationTool": "mlflow",
+    "orchestrationTool": "metaflow",
+    "monitoringTool": "evidently",
+    "deploymentTools": [
+      "fastapi",
+      "bentoml"
+    ],
+    "deploymentLearningOrder": [
+      "conceptual",
+      "fastapi",
+      "bentoml",
+      "architectural-comparison"
+    ]
+  },
+
+  "monitoring": {
+    "tool": "evidently",
+    "mode": "learning-first",
+    "introductionOrder": [
+      "conceptual-metrics",
+      "data-quality-reports",
+      "data-drift",
+      "model-performance-drift",
+      "alerts-and-thresholds"
+    ],
+    "useCases": [
+      "data-quality-validation",
+      "training-vs-inference-comparison",
+      "feature-drift-detection",
+      "prediction-drift-detection"
+    ],
+    "avoidForNow": [
+      "real-time-streaming-monitoring",
+      "complex-alert-routing",
+      "production-grade-dashboards"
+    ],
+    "requireExplanation": true
+  },
+
+  "architecture": {
+    "thinkLikeSolutionArchitect": true,
+    "focusAreas": [
+      "system-boundaries",
+      "contracts-and-interfaces",
+      "failure-modes",
+      "trade-offs",
+      "evolution-over-time"
+    ],
+    "discourage": [
+      "tool-driven-design",
+      "premature-optimization",
+      "infrastructure-first-thinking"
+    ]
+  },
+
+  "deployment": {
+    "enabled": true,
+    "mode": "learning",
+    "outOfScopeForNow": [
+      "kubernetes",
+      "autoscaling",
+      "service-mesh",
+      "production-slas"
+    ],
+    "requireToolJustification": true
+  },
+
+  "assistantBehavior": {
+    "role": "mentor-and-solution-architect",
+    "doNotAssumeApproval": true,
+    "alwaysExplainWhy": true,
+    "challengeDesignDecisions": true
+  }
+}
